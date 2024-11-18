@@ -1,0 +1,50 @@
+
+%%%Präambel%%%
+%!TEX program = lualatex
+\documentclass[parskip=half]{scrartcl}
+\input{praeambel.tex}
+
+\addbibresource{Meine_Bibliothek.bib} %Bibliographiedateien laden
+\begin{document}
+%%__Deckblat__t%%
+
+\title{Grundlagen CAN-Bus}
+\author{Philipp Flegler, Tomke Wegers}
+\date{24. April 1999}
+
+\maketitle
+%%_____%%
+
+\newpage
+\tableofcontents
+\newpage
+
+\section{Einleitung}
+
+    \input{Kapitel/Einleitung.tex}
+
+\section{CAN-Telegramme}
+
+    \input{Kapitel/CAN-Telegram.tex}
+\section{Buszugriff}
+\input{Kapitel/Buszugriff.tex}
+\section{Fehlermanagment}
+
+    \input{Kapitel/Fehlermanagment.tex}
+
+\section{CAN im ISO/OSI-Modell}
+
+    \input{Kapitel/ISO-Modell.tex}
+\section{Zusammenfassung}
+
+
+\newpage
+
+\section{Literaturverzeichnis}
+\printbibliography[title={ }]%hier Bibliographie ausgeben lassen
+\newpage
+\listoffigures
+\end{document}
+
+
+

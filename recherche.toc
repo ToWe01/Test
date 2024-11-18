@@ -1,0 +1,19 @@
+\babel@toc {ngerman}{}\relax 
+\contentsline {section}{\numberline {1}Einleitung}{3}{section.1}%
+\contentsline {section}{\numberline {2}CAN-Telegramme}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Aufbau von kurzen CAN-Telegrammen}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Besonderheiten von langen CAN-Telegrammen}{5}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Buszugriff}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Ablauf der Arbitrierung}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Sicherheit und Fehlertoleranz}{6}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Physikalische Einstellung des Buszustands}{6}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Fehlermanagment}{6}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Arten von Fehlern}{6}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Funktionsweise des Fehlermanagment}{7}{subsection.4.2}%
+\contentsline {section}{\numberline {5}CAN im ISO/OSI-Modell}{7}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Das OSI-Refernezmodell}{7}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Physikalische Schicht}{8}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Sicherungsschicht}{9}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Zusammenfassung}{9}{section.6}%
+\contentsline {section}{\numberline {7}Literaturverzeichnis}{10}{section.7}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

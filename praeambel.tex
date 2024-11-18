@@ -1,0 +1,115 @@
+%%%Präambel zum laden benötigter Packages%%%
+
+%Anpassung des Dokuments auf die deutsche Sprache
+\usepackage[ngerman]{babel}
+
+%Links und Verweise innerhalb des Dokuments erzeugen
+
+\usepackage[breaklinks, pdftex]{hyperref}
+
+%Geometrische Form des Dokuments
+\usepackage[a4paper, left=3cm, right=2cm, top=3.5cm , bottom=2.5cm]{geometry}
+
+%Paket zum einbinden von Bildern und Grafiken
+\usepackage{graphicx}
+
+%Für zwei Bilder nebeneinander
+\usepackage{subfigure}
+
+%Matheumgebung
+\usepackage{amsmath}
+
+%Mathematische Symbole
+\usepackage{amssymb}
+
+%Transformationszeichen
+\usepackage{trfsigns}
+
+%Fancy-Mathe-Buchstaben (z.B. Laplace L)
+\usepackage{mathrsfs}
+
+%Paket zum Darstellen von SI-Einheiten
+\usepackage{siunitx}
+
+%Sourcecode Printer in Latex
+\usepackage{listings}
+
+%Paket zum einbinden von Tikz-Dateien(Matlab)
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+
+
+%Ausgabeformat der PDF
+\usepackage[T1]{fontenc}
+
+%Eingabeformat der Latex Datei
+\usepackage[utf8]{inputenc}
+
+%Horizontale Linien innerhalb einer Tabelle
+\usepackage{booktabs}
+
+%Tabelle mit festen Breiten 
+\usepackage{tabularx}
+
+\usepackage{csquotes}
+ 
+%Zeilenabstand einstellen 
+\usepackage[onehalfspacing]{setspace}
+%Befehle zum umschalten des Zeilenabstandes 
+%\onehalfspacing             % anderthablfacher Zeilenabstand 
+
+%Absatzabstand einstellen
+\setlength{\parskip}{6pt}
+%Absatzeinzug einstellen
+\setlength{\parindent}{0pt}
+
+%Erstellen von Abkürzungen+ Verzeichnis
+\usepackage[withpage]{acronym}
+%Optionen:	footnote: Fußnoten der kurzform
+%			nohyperlinks: keine Verlinkungen
+%			printonlyused: nur verwendete Abkürzungen
+%			smaller: verkeinerung der Anzeige der Abkürzung
+%			dua: Langform der Abkürzung angezeigt
+%			nolist: Keine Übersciht der Abkürzungen
+%			withpage: Gibt die Seitenzahl mit an
+
+
+
+%Für den Float Specifier  
+\usepackage{float}
+
+		
+%Bibliotheksverwaltung und Zitieren
+\usepackage[backend=biber,url=false, sorting=none]{biblatex}
+
+%Definition eines Literatur und eines Quellenverzeichnisses
+\defbibheading{AL}{\section*{Literatur}}
+\defbibheading{QL}{\section*{Quellen}}
+\bibliography{Meine_Bibliothek.bib}
+\defbibfilter{AL}{\not\keyword{Quellen}}
+\defbibfilter{QL}{\keyword{Quellen}} %Quellen benötigen das Keyword "Quellen" in Jabref!
+%Änderung in Buchstaben mit dem Feld "Shorthand"!
+%Entfernen der Anführungszeichen im Titel und Hinzufügen eines Doppepunktes
+
+\DeclareFieldFormat[article]{title}{{#1}}
+\DeclareFieldFormat[misc]{title}{#1}
+\DeclareFieldFormat[article]{title}{{#1}}
+\DeclareFieldFormat[MastersThesis]{title}{#1}
+
+\DefineBibliographyStrings{german}{% 
+        andothers = {{et\,al\adddot}},             
+        editor = {(Hrsg.)}, 
+        editors = {(Hrsg.)}}
+        
+   
+
+%Einstellung neue Längen
+\newlength\Bildbreite
+\setlength\Bildbreite{0.9\textwidth}
+
+\numberwithin{equation}{section} 
+\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
+
+
+\usepackage[labelfont={bf,sf},font={small},%
+  labelsep=space]{caption}

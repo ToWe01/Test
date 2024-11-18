@@ -1,0 +1,49 @@
+Das CAN-Bussystem ist ein Multi-Master-System mit mehreren Busteilnehmern. 
+Daher muss der Zugriff auf den Bus geregelt werden, um zu verhindern, 
+dass der Bus dauerhaft besetzt ist. 
+Hierfür regelt das CAN-Bussystem den Zugriff mithilfe der zerstörungsfreien, bitweisen Arbitrierung.
+
+Wie oben erläutert, befindet sich in jedem CAN-Telegramm ein Arbitrierungsfeld, das aus dem Startbit, 
+einem Identifier und einem RTR-Bit (Remote Transmission Request) besteht. 
+Für den Buszugriff sind jedoch nur das Startbit und der Identifier relevant, da diese die Priorität 
+der Nachricht festlegen. Dabei gilt: Eine Null ist dominant, und eine Eins ist rezessiv. 
+Das RTR-Bit wird nur dann genutzt, wenn ein Teilnehmer Daten von einem anderen Teilnehmer anfordert.
+
+Die Priorität der Nachricht wird durch die Wertigkeit des Identifiers bestimmt. 
+Nachrichten mit kleineren Identifiern haben höhere Priorität und setzen sich bei gleichzeitigem 
+Zugriff auf den Bus durch. Da der CAN-Bus durch eine Null in einem Bit als „dominant“ belegt wird, 
+führt ein niedrigerer Identifier (mit mehr Nullen) automatisch zu einer höheren Priorität.
+
+\subsection{Ablauf der Arbitrierung}
+Wenn zwei oder mehr Teilnehmer gleichzeitig auf den Bus zugreifen, 
+folgt der Zugriff einem klaren Ablauf: Beide Teilnehmer senden zunächst ihr 
+Startbit (z. B. 0 = dominant), wodurch der Bus auf den dominanten Zustand eingestellt wird. 
+Beide Teilnehmer lesen den Zustand aus und senden weiter, solange die Bits, die sie senden, 
+mit dem empfangenen Wert übereinstimmen. Auf diese Weise erkennen sie nicht, 
+dass ein anderer Teilnehmer ebenfalls sendet.
+
+Dieser Prozess der bitweisen Arbitrierung setzt sich fort, bis es zu einer Abweichung in den 
+gesendeten Bits kommt. In diesem Moment stellt der Teilnehmer, der eine Eins (rezessiv) gesendet hat, 
+fest, dass sein Signal vom anderen Teilnehmer (der eine Null gesendet hat) „überstimmt“ wurde. 
+Der Teilnehmer mit dem rezessiven Bit bricht daraufhin die Übertragung ab und schaltet in den 
+Empfangsmodus, während der Teilnehmer mit dem dominanten Bit seine Nachricht ohne Unterbrechung 
+weitersendet.
+
+Dieses Verfahren wird als „zerstörungsfrei“ bezeichnet, 
+da der Teilnehmer mit der höheren Priorität (der das dominante Signal gesendet hat) seine 
+Übertragung nicht neu starten muss. Der abgebrochene Teilnehmer bleibt im Empfangsmodus und 
+kann die Nachricht weiterhin lesen, da sie auch für ihn relevant sein könnte. 
+Er muss das Telegramm nicht neu starten, da es den gleichen Anfang hat wie seine eigene Nachricht.
+
+\subsection{Sicherheit und Fehlertoleranz}
+Diese bitweise Arbitrierung macht das CAN-Bussystem besonders sicher und fehlertolerant. 
+Da die Arbitrierung zerstörungsfrei erfolgt, gehen keine Daten verloren, 
+und konkurrierende Teilnehmer können ihre Nachrichten sofort erneut senden, 
+sobald der Bus wieder frei ist. Dadurch wird eine hohe Datenintegrität und Effizienz gewährleistet.
+
+\subsection{Physikalische Einstellung des Buszustands}
+Voraussetzung für dieses System ist die richtige Einstellung des physikalischen Treibers, 
+sodass 0 als dominant und 1 als rezessiv erkannt wird. 
+In den meisten standardisierten CAN-CPUs ist die Null als dominant eingestellt, 
+sodass Nachrichten mit kleineren Identifiern (mehr Null-Bits) automatisch eine höhere 
+Priorität haben.

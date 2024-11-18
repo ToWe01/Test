@@ -1,0 +1,40 @@
+
+\subsection{Arten von Fehlern}
+Ein Bussystem sendet eine große Menge an Daten, dabei kann es zu Fehlern in der Übertragung kommen.
+Der CAN benutzt hierfür das "Data Link Layer" welches in standardisierten CAN-Chips implementiert ist.
+Es gibt verschiedene Fehler diese werden folgend aufgeführt:
+Bit Fehler: Bei der Überprüfung der Nachricht gibt es einen Falschen Wert.
+
+Bit-Stuffing-Fehler: In CAN wird eine Bitfolge von mehr als 5 gleichen Bits als Fehler erkannt.
+
+Es sei den es handelt sich um das EOF (End of Frame)
+
+Fehler: Die CRC-Prüfsumme stimmt nicht mit der berechneten übereinstimmen.
+
+Format Fehler: Es liegt das falsche Datenformat vor.
+
+Acknowledgement Fehler: Ein Sender empfängt von keinem Busteilnehmer ein dominates Bit im Acknowledgement
+-Slot
+\subsection{Funktionsweise des Fehlermanagment}
+Der CAN behandelt Fehler immer nach dem gleichen Prinzip dieses wird im folgenden aufgeführt.
+Zunächst muss einer der oben genannten Fehler genannt werden dafür sind diese Fehler bei jedem Busteilnehmer
+hinterlegt. Nachdem ein Busteilnehmer einen Fehler erkennt hat, sendet er einen Error Frame (mehr als
+5 gleiche Bits) das die Stuffing-Regel verletzt. Dies dient zur Übermittlung eines Fehlers an alle anderen
+Busteilnehmer, dadurch verwerfen alle Busteilnehmer das zuvor empfangene Telegramm. Anschließend
+werden bei den Busteilnehmern die Zähler TEC(Transmission Error Counter) oder REC(Receive Error Counter)
+beeinflusst. Abschließend wird das Telegramm erneut gesendet.
+Die oben genannten Zähler dienen dazu um dauerhafte Fehler durch defekte Hard- oder Software zu 
+verhindern.
+Jeder Busteilnehmer/Knoten kann drei Zustände annehmen je nachdem welchen Wert die Zähler haben.
+Diese Zustände bestimmen welche Priorität eines Busteilnehmers hat und zu bestimmen ob ein Busteilnehmer
+Fehlermeldungen senden darf oder nicht.
+Der erste Zustand ist "Active Error"(TEC \& REC < 128), dieser berechtigt einen CAN-Knoten ein dominantes
+Error Frame zu senden sollte er einen Fehler feststellen.
+Der zweite Zustand ist "Passive Error"(TEC || REC >127), dieser sorgt dafür das der CAN-Knoten nur noch
+rezessive Error Frames zu senden um zu verhindern das der CAN-Knoten den Bus weiter mit Fehlermeldungen
+behindert.
+Der letzte Zustand ist "Bus Off"(TEC > 255), dieser trennt den Busteilnehmer von der Kommunikation im
+Bussystem. Dieser Zustand kann nur verlassen werden durch einen Soft- oder Hardware Reset.
+
+Wie oben erwähnt werden die Zähler oben beeinflusst, dies geschieht mittels verschiedener Algorithm
+um den Fehler beim richtigen Knoten zuzuordnen.

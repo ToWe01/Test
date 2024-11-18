@@ -1,0 +1,66 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{lawrenzCANControllerArea2016}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=0590970b0051d975e652ac22272c7125}{%
+           family={Lawrenz},
+           familyi={L\bibinitperiod},
+           given={Wolfhard},
+           giveni={W\bibinitperiod}}}%
+        {{hash=204a43de0f1cbd35d856fe549cfcccad}{%
+           family={Obermöller},
+           familyi={O\bibinitperiod},
+           given={Nils},
+           giveni={N\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {ger}%
+      }
+      \list{location}{1}{%
+        {Berlin Offenbach}%
+      }
+      \list{publisher}{1}{%
+        {VDE Verlag}%
+      }
+      \strng{namehash}{f462eaea7590881cacbd5d98809bcbda}
+      \strng{fullhash}{f462eaea7590881cacbd5d98809bcbda}
+      \strng{fullhashraw}{f462eaea7590881cacbd5d98809bcbda}
+      \strng{bibnamehash}{f462eaea7590881cacbd5d98809bcbda}
+      \strng{authorbibnamehash}{f462eaea7590881cacbd5d98809bcbda}
+      \strng{authornamehash}{f462eaea7590881cacbd5d98809bcbda}
+      \strng{authorfullhash}{f462eaea7590881cacbd5d98809bcbda}
+      \strng{authorfullhashraw}{f462eaea7590881cacbd5d98809bcbda}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{CAN ist ein nachrichtenorientiertes Multi-Master-Protokoll für den schnellen, seriellen Datenaustausch und hat sich in zahlreichen Bereichen der Industrie – bei denen es auf hohe Robustheit und Datensicherheit sowie niedrige Kosten und eine breite Palette von Anbietern von Komponenten, zugehöriger Software und Werkzeugen ankommt – etabliert, beispielsweise in der Automobiltechnik (Vernetzung unterschiedlicher Steuergeräte, Sensoreinheiten und sogar Multimediaeinheiten), Automatisierungstechnik (zeitkritische Sensoren im Feld, überwachungstechnische Einrichtungen), Medizintechnik (Magnetresonanz- und Computertomographen, Laborgeräte etc.) oder in der Flugzeugtechnik (Vernetzung innerhalb von Avionik-Systemen) und Schifftechnik. -- Diese facettenreiche Entwicklung dokumentieren in der nunmehr 5. Auflage dieses erfolgreichen Fachbuches mehr als 40 kompetente Fachleute, die das Thema von allen Seiten beleuchten. -- Von der Architektur, über Hardware und Software bis zur Schnittstelle und zum Applikationsinterface wird CAN detailliert in allen seinen Bauformen beschrieben. Die Komplexität beim Design und der Realisierung von Netzwerken wird verständlich gemacht. Ein spannendes Kapitel über typische Anwendungen zeigt CAN als vernetztes System im Automobilbereich, als zeitgesteuertes fehlertolerantes Elektroniksystem und innerhalb hochkritischer Luftfahrtsysteme und gibt damit einen repräsentativen Überblick über die Vielseitigkeit von CAN. Einhergehend mit der Modularisierung heutiger Systeme gewinnt die Testtechnik an Bedeutung und nimmt entsprechenden Raum im Buch ein. -- Damit wird dem Entwickler von CAN-Systemen ein umfassendes Kompendium an die Hand gegeben, das ihm hilft, die an ihn gestellten Anforderungen effizienter zu erfüllen. Der Anwender wird Antworten auf die Fragen finden, die sich ihm im täglichen Umgang mit dem CANProtokoll und der Realisierung von CAN-Netzwerken stellen}
+      \field{edition}{5., neu bearbeitete Auflage}
+      \field{isbn}{978-3-8007-3805-2}
+      \field{shorttitle}{{CAN}}
+      \field{title}{{CAN}: {Controller} {Area} {Network}: {Grundlagen}, {Design}, {Anwendungen}, {Testtechnik}}
+      \field{year}{2016}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
